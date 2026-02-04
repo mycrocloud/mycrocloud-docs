@@ -1,0 +1,8 @@
+{
+  "label": "Routing",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how MyCroCloud handles incoming requests and routes them to the appropriate target."
+  }
+}
