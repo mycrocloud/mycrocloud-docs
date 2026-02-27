@@ -53,7 +53,7 @@ MyCroCloud uses a declarative routing configuration that determines how requests
     {
       "priority": 1,
       "match": { "type": "Prefix", "path": "/api" },
-      "target": { "type": "Api", "stripPrefix": true }
+      "target": { "type": "Api", "stripPrefix": false }
     },
     {
       "priority": 2,
@@ -65,7 +65,7 @@ MyCroCloud uses a declarative routing configuration that determines how requests
 ```
 
 This default configuration:
-1. Routes all `/api/*` requests to API routes (stripping the `/api` prefix)
+1. Routes all `/api/*` requests to API routes (keeping the full path for route lookup)
 2. Serves static files for all other requests, falling back to `index.html` for SPA support
 
 ## Route Matching
@@ -125,7 +125,7 @@ Serves static files from the app's latest build artifacts.
       "name": "API Routes",
       "priority": 1,
       "match": { "type": "Prefix", "path": "/api" },
-      "target": { "type": "Api", "stripPrefix": true }
+      "target": { "type": "Api", "stripPrefix": false }
     },
     {
       "name": "Static Assets",
