@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Request & Response
@@ -34,7 +34,9 @@ The `request` object contains the following properties:
 
 ### `method`
 
-The HTTP method of the incoming request, always uppercase.
+The HTTP method of the incoming request, always uppercase (e.g., `"GET"`, `"POST"`, `"PUT"`, `"DELETE"`).
+
+If your route is configured with the `ANY` method, it matches all HTTP methods. You can use `request.method` to distinguish between them in your handler:
 
 ```js
 function handler(request) {
